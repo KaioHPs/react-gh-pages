@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Search.css';
 
 class Search extends React.Component {
   constructor() {
@@ -33,9 +34,12 @@ class Search extends React.Component {
     return (
       <div>
         <input type="text" onChange={this.fetchUsers} ></input>
-        { users.map((user) => <div>
-            <img key={user.id} src={user.avatar_url} alt="user" />
-            <Link to={`user/${user.login}`}>Ver detalhes</Link>
+        { users.map((user) => <div className="user_cont">
+            <img key={ user.id } src={ user.avatar_url } alt="user" />
+            <div className="user_info">
+              <h2>{ user.login }</h2>
+              <Link to={`user/${user.login}`}>Ver detalhes</Link>
+            </div>
           </div>)}
       </div>
     )
