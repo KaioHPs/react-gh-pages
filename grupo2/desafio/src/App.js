@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Switch>
       <Route exact path="/" component={ Search } />
       <Route path="/user/:id" render={ (props) => <Details { ...props } /> } />
